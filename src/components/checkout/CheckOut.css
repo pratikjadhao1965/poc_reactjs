@@ -1,0 +1,74 @@
+.CheckOut{
+    display: flex;
+  justify-content:center;
+    margin-top: 10px;
+    width: 100%;
+}
+.summary{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 5px;
+    width:45%;
+    padding:20px;
+    border-radius: 20px;
+}
+.form{
+    padding:20px;
+ margin: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width:47%;
+    border-radius: 20px;
+}
+
+.form input{
+    display: block;
+    border-radius: 5px;
+    height:40px;
+    border:1px solid rgb(103, 105, 101);
+}
+ .form button{
+    width:90px;
+    height:30px;
+    border-radius: 5px;
+    background-color:rgb(142, 212, 72) ;
+    border:1px solid rgb(152, 236, 69);
+    color: white;
+    margin:5px;
+}
+.form button:hover,
+.form button:disabled{
+   
+    background-color:rgb(151, 153, 149) ;
+  
+}
+
+@media (max-width:600px){
+    .form{
+        object-position: top;
+       width:97%;
+      
+        }
+    .summary{
+       
+        margin-top: 10px;
+        width:97%;
+}
+.CheckOut{
+    display: flex;
+  
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+}
+
+.address{
+    border-bottom:1px solid lightGrey;
+    
+}
+
+.addresses{
+    
+   
+overflow-x: hidden;
+overflow-y: auto;
+height:200px;
+}

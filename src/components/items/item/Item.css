@@ -1,0 +1,87 @@
+.root {
+  min-width: 160px;
+  max-width: 320px;
+  
+  margin:10px;
+  width:25%;
+  border:0.1px solid rgb(186, 236, 93);
+}
+.media{
+  height:140px;
+  background-image: url("C:/Users/pratik/Desktop/Aniket/my-app/src/assets/default-product.jpg");
+  background-size: 140px;
+}
+.button{
+  background-color: transparent;
+  border:0px;
+  outline: none;
+}
+
+.button:hover,
+.button:disabled{
+  opacity: 0.5;
+}
+@media (max-width:500px){
+  
+  .root {
+    min-width: 160px;
+    max-width: 350px;
+    margin:3px;
+    width:20%;
+    padding:1px;
+  }
+  .media{
+    height:120px;
+    background-image: url("C:/Users/pratik/Desktop/Aniket/my-app/src/assets/default-product.jpg");
+    background-size: 120px;
+  }
+  .button{
+    width:100%;
+    height:30px;
+    size: 30px;
+  }
+  .Text{
+    width:90px;
+    height:40px;
+  }
+} 
+
+
+.card{
+
+
+text-align:center;
+align-items: center;
+margin:10px;
+background-color:#f1f1f1;
+background-image: linear-gradient(rgb(238, 238, 238),rgb(255, 255, 255));
+border: 1px solid rgb(182, 85, 21);
+
+max-width: 300px;
+border-radius: 5px;
+}
+
+.price {
+color: grey;
+font-size: 12px;
+}
+
+.img{
+background-repeat: no-repeat;
+background-position: 50% 50%; 
+background-size: cover;
+margin-bottom:5px;
+background-image: url("../../../assets/default-product.jpg");
+width:100%;
+height:250px;
+
+}
+.card button:hover {
+opacity: 0.5;
+}
+
+@media (max-width:400px){
+  
+.card img{
+height:150px;
+}}

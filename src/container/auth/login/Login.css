@@ -1,0 +1,48 @@
+.Login{
+    margin:70px auto;
+    width:80%;
+    height:80%;
+    text-align: center;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 3px #ccc; */
+    padding: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+      
+    box-sizing: border-box;
+}
+
+.Login input{
+    display: block;
+    border-radius: 5px;
+    height:30px;
+    border:1px solid rgb(103, 105, 101);
+}
+.Login button{
+    width:90px;
+    height:30px;
+    border-radius: 5px;
+    background-color:rgb(142, 212, 72) ;
+    border:1px solid rgb(152, 236, 69);
+    color: white;
+    margin:5px;
+}
+.Login button:hover,
+.Login button:disabled{
+   
+    background-color:rgb(151, 153, 149) ;
+  
+}
+
+
+@media (min-width:600px){
+    .Login{
+        width: 500px;
+    }
+    .Login button:hover{
+   
+        background-color:rgb(151, 153, 149) ;
+      
+    }
+  
+}

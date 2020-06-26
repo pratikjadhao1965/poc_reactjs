@@ -1,0 +1,131 @@
+.Order{
+    
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+    margin-top: 20px;
+    border-radius:50px 0 ;
+    padding: 20px 40px 20px 40px ;
+   
+    
+}
+.id{
+    background-color: rgb(200, 260, 93);
+    border-radius: 30px;
+    padding:8px;
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: rgb(7, 6, 6);
+}
+.Products{
+    
+   border-bottom: 1px solid lightgray;
+    margin: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+   
+   
+}
+.productInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.img{
+   
+   
+    width:80px;
+    height:80px;
+    background-image: url("C:/Users/pratik/Desktop/Aniket/my-app/src/assets/default-product.jpg");
+    background-size: 80px;
+    margin: 5px;
+    margin-left: 30px;
+}
+
+.address{
+    display: flex;
+    justify-content: space-between;
+}
+.date{
+    display:"flex";
+    flex-direction:"column";
+}
+.status{
+    text-size-adjust: 10px;
+}
+.button{
+    width:100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(248, 108, 108);
+    border: 2px solid rgb(248, 108, 108);
+}
+.button:hover{
+    color: rgb(236, 161, 161);
+    border: 2px solid rgb(236, 162, 162);
+}
+@media (max-width:500px){
+    .Order{
+        padding: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      
+      
+       border-radius:10px 0 ;
+       padding: 2px 4px 2px 4px ;
+      
+       
+   }
+   .id{
+       background-color: rgb(200, 260, 93);
+       border-radius: 10px;
+       font-size: 10px;
+       
+       color: rgb(7, 6, 6);
+   }
+   .Products{
+       
+      border-bottom: 1px solid lightgray;
+       
+       margin: 5px;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       padding: 5px;
+      
+   }
+   .productInfo{
+       display: flex;
+      
+   }
+  
+   .img{
+      
+      
+       width:60px;
+       height:60px;
+    
+       margin: 5px;
+       margin-left: 10px;
+   }
+   
+   .address{
+       display: flex;
+       justify-content: center;
+   }
+   .addressDetails{
+       display: none;
+   }
+   .date{
+    
+   
+    flex-direction:"row";
+}
+.button{
+    width:70px;
+    height: 25px;
+    border-radius: 5px;
+    color: rgb(248, 108, 108);
+    border: 1px solid rgb(248, 108, 108);
+}
+}

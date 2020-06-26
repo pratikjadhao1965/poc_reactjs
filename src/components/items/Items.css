@@ -1,0 +1,23 @@
+
+
+    
+.Items{
+display: flex;
+flex-flow: row wrap;
+
+justify-content: center;
+flex: auto;
+
+}
+
+.Items::after {
+  content: "";
+  
+}
+@media (max-width:500px){
+  .Items{
+    display: flex;
+    flex-flow: row wrap;
+    margin:none;
+  }
+}

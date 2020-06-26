@@ -1,0 +1,216 @@
+.inputWrapper {
+    
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    /*Using a background color, but you can use a background image to represent a button*/
+    
+}
+.fileInput {
+    cursor: pointer;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    /*This makes the button huge. If you want a bigger button, increase the font size*/
+    font-size:50px;
+    /*Opacity settings for all browsers*/
+    opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}
+.profilePage{
+     
+ margin:20px;
+    
+ 
+}
+.main{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 50px 0;
+    padding:5px;
+    display: flex;
+    margin-top: 20px;
+    
+    flex-direction: row;
+}
+.sideMenu{
+    border-right:2px solid lightgray;
+    width:20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin:50px;
+}
+.sideMenu button{
+    margin: 5px;
+    height: 8%px;
+    width: 20%px;
+    
+    background-color: rgb(137, 214, 60);
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.profile{
+    text-align: left;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+}
+
+.profilecard{
+    align-items: center;
+    
+   display: flex;
+    margin:50px;
+}
+.profile{
+   width:60%;
+    
+   align-items: center;
+  
+}
+.info span{
+    margin: 10px;
+    padding: 10px;
+    background-color: lightgray;
+    border-radius: 10px;
+ }
+.profile img{
+    
+    width:200px;
+    height:200px;
+    border-radius: 50% 50%;
+    margin: 0;
+    background-image: url("C:/Users/pratik/Desktop/Aniket/my-app/src/assets/default-product.jpg");
+    background-size: 200px;
+}
+.button{
+    margin: 5px;
+    height: 35px;
+    width: 80px;
+    background-color: rgb(137, 214, 60);
+    border: none;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+.button:hover,
+.button:disabled{
+ 
+    background-color: rgb(141, 143, 140);
+  
+}
+
+@media (max-width:600px){
+  
+    .main{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 50px 0;
+        padding:30px;
+        
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sideMenu{
+        border-bottom:2px solid lightgray;
+        border-right:0px solid lightgray;
+    
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:10px;
+    }
+    .sideMenu button{
+        margin: 5px;
+        width: 200px;
+        height: 50px;
+        background-color: rgb(137, 214, 60);
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+    }
+    .profile{
+        width:95%;
+       
+     }
+    .profilecard{
+        align-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .info{
+        margin: 0px;
+     }
+     .info span{
+        margin: 4px;
+        padding: 4px;
+        background-color: lightgray;
+        border-radius: 10px;
+     }
+    .profile img{
+        
+        width:130px;
+        height:130px;
+        border-radius: 50% 50%;
+        margin: 0;
+        background-image: url("C:/Users/pratik/Desktop/Aniket/my-app/src/assets/default-product.jpg");
+    background-size: 130px;
+    }
+    .button{
+        height: 30px;
+        width: 55px;
+        background-color: rgb(137, 214, 60);
+    }
+}
+@media (max-width:340px){
+    .sideMenu{
+        border-bottom:2px solid lightgray;
+        border-right:0px solid lightgray;
+    
+    font-size: 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:10px;
+    }
+    .sideMenu button{
+        margin: 5px;
+       width:100px;
+       
+        
+        background-color: rgb(137, 214, 60);
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+    }
+}
+@media (max-width:295px){
+    .sideMenu{
+        border-bottom:2px solid lightgray;
+        border-right:0px solid lightgray;
+    
+    font-size: 11px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin:10px;
+    }
+    .sideMenu button{
+        margin: 5px;
+       
+        
+        background-color: rgb(137, 214, 60);
+        border: none;
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+    }
+}
