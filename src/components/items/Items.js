@@ -3,23 +3,31 @@ import Item from "./item/Item"
 import Sidebar from "../UI/sidebar/Sidebar"
 import {connect} from "react-redux"
 import {addToCart,addQuantity,removeQuantity} from "../../store/actions/cart"
+import {initItems} from "../../store/actions/item"
 import classes from "./Items.css"
 import {Spinner} from "react-bootstrap"
 
 const items=(props)=>{
     const [catagories,setCatagories]=useState([])
     const [newItems,setNewItems]=useState([])
-    const {items,searchedItems}=props
+    const {items,searchedItems,onInitItems}=props
+
+    useEffect(()=>{
+        onInitItems()
+    },[])
+    
 
     useEffect(()=>{
        setNewItems(items)
+        
     },[items])
 
     //search items by name when searchlKey is passes 
     useEffect(()=>{
        
         if(searchedItems){
-       setNewItems(searchedItems)}
+       setNewItems(searchedItems)
+    }
     },[searchedItems])
     
     const addToCartHandler=(id,name,price)=>{
@@ -91,7 +99,8 @@ const mapDispatchToProps=dispatch=>{
         
         onAddToCart:(id,name,price,token)=>dispatch(addToCart(id,name,price,token)),
         onAddQuantity:(id,token)=>dispatch(addQuantity(id,token)),
-        onRemoveQuantity:(id,token)=>dispatch(removeQuantity(id,token))
+        onRemoveQuantity:(id,token)=>dispatch(removeQuantity(id,token)),
+        onInitItems:()=>dispatch(initItems()),
     }
 }
 

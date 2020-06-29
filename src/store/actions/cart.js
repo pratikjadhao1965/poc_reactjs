@@ -100,7 +100,6 @@ export const initCart=()=>{
             dispatch(initCartData(response.data.cart,response.data.total))
         })
         .catch((error)=>{
-            console.log(error.response)
             dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
             setTimeout(()=>{
                 dispatch({type:"SET_CART_ERROR_NULL"})

@@ -10,7 +10,6 @@ import Register from "./container/auth/register/Register"
 import {connect} from "react-redux"
 import {authCheckState} from "./store/actions/auth"
 import {initCart} from "./store/actions/cart"
-import {initItems} from "./store/actions/item"
 import LogoutComponent from './container/auth/logout/Logout';
  import CheckOut from "./components/checkout/CheckOut"
 import Orders from "./components/orders/Orders"
@@ -19,23 +18,12 @@ import Layout from './components/Layout/Layout'
 
 
   const app =(props)=> {
-    const {onInitCart,onInitItems,isAuthenticated,token,searchKey}=props
+    const {onInitCart,isAuthenticated,token}=props
   
 
     useEffect(()=>{
       props.onTryAutoSignup()    
     },[])
-    
-
-    useEffect(()=>{
-      const timeout=setTimeout(()=>{
-          onInitItems(searchKey)
-      },500)
-      return ()=>{
-          clearTimeout(timeout)
-      }
-
-  },[onInitItems])
 
     useEffect(()=>{
         if(isAuthenticated)
@@ -86,15 +74,13 @@ import Layout from './components/Layout/Layout'
       token:state.authState.token,
         isAuthenticated:state.authState.token!==null,
         cart:state.cartState.cart,
-        total:state.cartState.total,
-        searchKey:state.itemState.searchKey,
+        total:state.cartState.total
     }
   }
   
   const mapDispatchToProps=(dispatch)=>{
     return{
       onTryAutoSignup:()=>dispatch(authCheckState()),
-      onInitItems:(searchKey)=>dispatch(initItems(searchKey)),
       onInitCart:(token)=>dispatch(initCart(token))
     }
   }
