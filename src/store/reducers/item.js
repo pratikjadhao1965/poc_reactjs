@@ -1,8 +1,7 @@
 const initialState={
     items:[],
-    error:null,
-    loading:false,
-    searchKey:""
+    searchedItems:[],
+    error:null
 }
 const reducer=(state=initialState,action)=>{
     switch(action.type){
@@ -34,10 +33,21 @@ const reducer=(state=initialState,action)=>{
                 items:[],
                 error:action.error
             }
+            
         case "SEARCH":
+            const regex=new RegExp(action.searchKey,"i")
+            const updatedItems2=state.items.filter(item=>item.name.match(regex))
+            if(!updatedItems2[0]){
+                return {
+                    ...state,
+                    error:"items not found",
+                    searchedItems:null
+                }
+            }       
         return {
             ...state,
-            searchKey:action.searchKey
+            error:null,
+            searchedItems:updatedItems2
         }
        
         default:

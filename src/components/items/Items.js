@@ -9,24 +9,18 @@ import {Spinner} from "react-bootstrap"
 const items=(props)=>{
     const [catagories,setCatagories]=useState([])
     const [newItems,setNewItems]=useState([])
-    const [error,setError]=useState(null)
-    const {items,searchKey}=props
+    const {items,searchedItems}=props
 
-    //search items using name
     useEffect(()=>{
-        const regex=new RegExp(searchKey,"i")
-        const updatedItems=items.filter(item=>item.name.match(regex))
-        let timeout
-        if(!updatedItems[0]){
-            timeout=setTimeout(()=>{setError("items not found")},7000)
-        }
-        setNewItems([...updatedItems])
-        setError(null)
-        return ()=>{
-            clearTimeout(timeout)
-        }
-    },[items,searchKey])
+       setNewItems(items)
+    },[items])
 
+    //search items by name when searchlKey is passes 
+    useEffect(()=>{
+       
+        if(searchedItems){
+       setNewItems(searchedItems)}
+    },[searchedItems])
     
     const addToCartHandler=(id,name,price)=>{
             props.onAddToCart(id,name,price,props.token)
@@ -49,7 +43,7 @@ const items=(props)=>{
         }
     }
     
-    let itemList=<div>{error?<p>{error}</p>:<Spinner animation="border" variant="success"/>}</div>
+    let itemList=<Spinner animation="border" variant="success"/>
     
     if(newItems[0]){
      itemList=newItems.map(item=>{
@@ -86,6 +80,7 @@ const mapStateToProps=state=>{
         isAuthenticated:state.authState.token!==null,
         cart:state.cartState.cart,
         searchKey:state.itemState.searchKey,
+        searchedItems:state.itemState.searchedItems,
         items:state.itemState.items,
         errorItem:state.itemState.error,
         errorCart:state.cartState.error

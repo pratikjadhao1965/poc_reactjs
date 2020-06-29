@@ -13,7 +13,7 @@ export const initItems=()=>{
         }).catch(error=>{
             dispatch({
                 type:"SET_ERROR_ITEM",
-                error:error.response.data.error
+                error:"items not found"
             })
         })
     }
