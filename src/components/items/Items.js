@@ -1,3 +1,5 @@
+//to show all items/products present in database ,items component is used in shop builder container
+
 import React, { useState,useEffect } from "react"
 import Item from "./item/Item"
 import Sidebar from "../UI/sidebar/Sidebar"

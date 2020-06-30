@@ -1,3 +1,5 @@
+//component handles profile page ,changes profile details
+
 import React ,{useEffect,useState} from "react"
 import classes from "./Profile.css"
 import axios from "axios"

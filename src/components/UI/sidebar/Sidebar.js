@@ -1,3 +1,5 @@
+//component is to show which catagories do exist among the products
+
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';

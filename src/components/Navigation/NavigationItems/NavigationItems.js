@@ -1,3 +1,5 @@
+//decides menu bar contents
+
 import React from "react"
 import {logout} from "../../../store/actions/auth"
 import {connect} from "react-redux"

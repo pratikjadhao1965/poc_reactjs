@@ -1,3 +1,6 @@
+//this component handles the checkout process,shows previous addresses to select from them and is used in App.js
+
+
 import React,{useState,useEffect} from "react"
 import Input from "../UI/Input/Input"
 import classes from "./CheckOut.css"
@@ -151,6 +154,7 @@ const checkOut =(props)=>{
         }
     }
 
+    //clicked address gets filled 
     const selectAddressHandler=(address)=>{
         let updatedControls={...controls}
         
@@ -173,6 +177,7 @@ const checkOut =(props)=>{
         setControls(updatedControls)
         setFormIsValid(formIsValid)
     }
+    
     let addressList=addresses.map(address=>{
     return (<div className={classes.address} key={address._id} onClick={()=>selectAddressHandler(address)}>
                 <br/><strong>{address.name},{" "}
