@@ -12,7 +12,9 @@ project has following fuctionalities.
 7.while placing order can select previos addresses if any.
 8.on profile page one can change profile picture,update profile details,change password,delete address,logout all users.
 
-if needed here is already regitered user who already has placed orders and some items in cart.
+reactjs hosted site:https://e-comm-react.web.app/
+
+if needed here is already regitered user who already has placed orders and some items in cart.(for hosted react site)
 email:xyz@xyz.com
 password:12345678
 
