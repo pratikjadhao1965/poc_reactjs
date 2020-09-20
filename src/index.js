@@ -13,7 +13,7 @@ import itemReducer from "./store/reducers/item"
 import orderReducer from "./store/reducers/order"
 import axios from "axios"
 
-const composeEnhancers =process.env.NODE_ENV==="development"? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :null|| compose;
+//const composeEnhancers =process.env.NODE_ENV==="development"? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :null|| compose;
 
 const rootReducer=combineReducers({
     authState:authReducer,
@@ -24,9 +24,7 @@ const rootReducer=combineReducers({
 
 
 
-const store=createStore(rootReducer, composeEnhancers(
-    applyMiddleware(thunk)
-    ))
+const store=createStore(rootReducer, applyMiddleware(thunk))
 
 axios.interceptors.request.use(config=>{
     const token=store.getState().authState.token

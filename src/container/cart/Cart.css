@@ -114,7 +114,7 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
   .product .productimage img {
     width: 100px;
    height: 100px;
-        background-image: url("C:/Users/pratik/Desktop/Aniket/my-app/src/assets/default-product.jpg");
+        background-image: url("../../assets/default-product.jpg");
       background-size: 100px;
   }
   .product .productdetails .producttitle {
