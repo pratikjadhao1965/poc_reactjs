@@ -31,8 +31,14 @@ export const logoutAll=()=>{
                 })
                 
             })
-            .catch((err)=>{
-                dispatch({type:"SET_AUTH_ERROR",error:err.response.data.error})
+            .catch((error)=>{
+                if(error.response)
+            {
+                dispatch({type:"SET_AUTH_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_AUTH_ERROR",error:"something went wrong"})
+            }
+                
                 setTimeout(()=>{
                     dispatch({type:"SET_AUTH_ERROR_NULL"})
                 },3000)
@@ -60,8 +66,13 @@ export const auth=(email,password)=>{
                 dispatch(authSuccess(response.data.token,response.data.user._id,response.data.user.name))
                 
             })
-            .catch((err)=>{
-                dispatch({type:"SET_AUTH_ERROR",error:err.response.data})
+            .catch((error)=>{
+                if(error.response)
+                {
+                    dispatch({type:"SET_AUTH_ERROR",error:error.response.data.error})
+                }else{
+                    dispatch({type:"SET_AUTH_ERROR",error:"something went wrong"})
+                }
                 setTimeout(()=>{
                     dispatch({type:"SET_AUTH_ERROR_NULL"})
                 },3000)
@@ -94,8 +105,13 @@ export const registerUser=(name,email,password,phone,age,gender)=>{
                 dispatch(authSuccess(response.data.token,response.data.user._id,response.data.user.name))
                 
             })
-            .catch((err)=>{
-                dispatch({type:"SET_AUTH_ERROR",error:err.response.data})
+            .catch((error)=>{
+                if(error.response)
+                {
+                    dispatch({type:"SET_AUTH_ERROR",error:error.response.data.error})
+                }else{
+                    dispatch({type:"SET_AUTH_ERROR",error:"something went wrong"})
+                }
                 setTimeout(()=>{
                     dispatch({type:"SET_AUTH_ERROR_NULL"})
                 },3000)
@@ -136,10 +152,12 @@ export const setProfile=()=>{
                     profile:response.data
                 })
             }).catch((error)=>{
-                dispatch({
-                    type:"SET_AUTH_ERROR",
-                    error:error.response.data.error
-                })
+                    if(error.response)
+            {
+                dispatch({type:"SET_AUTH_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_AUTH_ERROR",error:"something went wrong"})
+            }
                 setTimeout(()=>{
                     dispatch({
                         type:"SET_AUTH_ERROR_NULL"
@@ -176,10 +194,12 @@ export const updateProfile=(name,email,phone,age,gender)=>{
             },2500)
         })
             .catch((error)=>{
-                dispatch({
-                    type:"SET_AUTH_ERROR",
-                    error:error.response.data.error
-                })
+                if(error.response)
+                {
+                    dispatch({type:"SET_AUTH_ERROR",error:error.response.data.error})
+                }else{
+                    dispatch({type:"SET_AUTH_ERROR",error:"something went wrong"})
+                }
                 setTimeout(()=>{
                     dispatch({
                         type:"SET_AUTH_ERROR_NULL"
@@ -213,10 +233,12 @@ export const changePassword=(prevPassword,newPassword)=>{
             
             })
         .catch((error)=>{
-                dispatch({
-                    type:"SET_AUTH_ERROR",
-                    error:error.response.data.error
-                })
+            if(error.response)
+            {
+                dispatch({type:"SET_AUTH_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_AUTH_ERROR",error:"something went wrong"})
+            }
                 setTimeout(()=>{
                     dispatch({
                         type:"SET_ERROR_NULL"

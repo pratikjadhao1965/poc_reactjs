@@ -22,7 +22,12 @@ export const addQuantity=(id,token)=>{
                         id:id
                     })
             }).catch(error=>{
+                if(error.response)
+            {
                 dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_CART_ERROR",error:"something went wrong"})
+            }
                 setTimeout(()=>{
                     dispatch({type:"SET_CART_ERROR_NULL"})
                 },3000)
@@ -100,7 +105,12 @@ export const initCart=()=>{
             dispatch(initCartData(response.data.cart,response.data.total))
         })
         .catch((error)=>{
-            dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
+            if(error.response)
+            {
+                dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_CART_ERROR",error:"something went wrong"})
+            }
             setTimeout(()=>{
                 dispatch({type:"SET_CART_ERROR_NULL"})
             },3000)
@@ -130,10 +140,16 @@ export const addToCart=(id,name,price,token)=>{
                         id:id
                     })
             }).catch(error=>{
-                dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
-            setTimeout(()=>{
-                dispatch({type:"SET_CART_ERROR_NULL"})
-            },3000)
+                //console.log(error)
+                if(error.response){
+                    dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
+                }
+                else{
+                    dispatch({type:"SET_CART_ERROR",error:"something went wrong"})
+                }
+                setTimeout(()=>{
+                    dispatch({type:"SET_CART_ERROR_NULL"})
+                },3000)
             })
         }
         else{
@@ -182,7 +198,12 @@ export const placeOrder=(cart,total,form)=>{
                 dispatch(clearCart()) 
                                  
             }).catch(error=>{
+                if(error.response)
+            {
                 dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_CART_ERROR",error:"something went wrong"})
+            }
             setTimeout(()=>{
                 dispatch({type:"SET_CART_ERROR_NULL"})
             },3000)
@@ -200,7 +221,12 @@ export const clearCart=()=>{
                     type:"CLEAR_CART"
                 })
              }).catch(error=>{
+                if(error.response)
+            {
                 dispatch({type:"SET_CART_ERROR",error:error.response.data.error})
+            }else{
+                dispatch({type:"SET_CART_ERROR",error:"something went wrong"})
+            }
                 setTimeout(()=>{
                     dispatch({type:"SET_CART_ERROR_NULL"})
                 },3000)

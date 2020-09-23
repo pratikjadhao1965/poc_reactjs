@@ -76,8 +76,9 @@ const items=(props)=>{
     return(
         <React.Fragment > 
             <Sidebar catagories={catagories} clicked={(catagory)=>searchByCatagoryHandler(catagory)}/>
-            {props.errorCart?<span style={{"position":"relative","marginLeft":"50%"}}>{props.errorCart}</span>:null}                
+                           
                     <div className={classes.Items}>
+                    {props.errorCart?<p >{props.errorCart}. </p>:null}
                     {props.errorItem?<p>{props.errorItem}</p>:itemList}
                      </div>
             </React.Fragment > 

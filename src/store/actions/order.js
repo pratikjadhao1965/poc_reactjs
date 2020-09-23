@@ -10,10 +10,18 @@ export const initOrders=(token)=>{
                     orders:response.data
                     })
             }).catch(error=>{
-                dispatch({
-                    type:"SET_ORDER_ERROR",
-                    error:error.response.data
-                    })
+                if(error.response){
+                    dispatch({
+                        type:"SET_ORDER_ERROR",
+                        error:error.response.data
+                        })
+                }else{
+                    dispatch({
+                        type:"SET_ORDER_ERROR",
+                        error:"Something Went Wrong"
+                        })
+                }
+                
             })
     }
 }
@@ -29,10 +37,17 @@ export const cancelOrder=(id,token)=>{
                     orderId:id
                 })
             }).catch(error=>{
-                dispatch({
-                    type:"SET_ORDER_ERROR",
-                    error:error.response.data
-                    })
+                if(error.response){
+                    dispatch({
+                        type:"SET_ORDER_ERROR",
+                        error:error.response.data
+                        })
+                }else{
+                    dispatch({
+                        type:"SET_ORDER_ERROR",
+                        error:"Something Went Wrong"
+                        })
+                }
             })
     }
 }
